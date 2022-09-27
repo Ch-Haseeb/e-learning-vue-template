@@ -1,14 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'dashboard',
+    component: () => import('./../views/DashboardView')
+  },
+  {
+    path: '/elearning/content',
+    name: 'eLearning Content',
+    component: () => import('./../views/eLearning/eLearningContent')
   },
   {
     path: '/about',
